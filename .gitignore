@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+/function_exercise/.idea/.gitignore
+/function_exercise/.idea/function_exercise.iml
+/function_exercise/.idea/misc.xml
+/function_exercise/.idea/modules.xml
+/function_exercise/.idea/inspectionProfiles/profiles_settings.xml
+/function_exercise/.idea/vcs.xml
