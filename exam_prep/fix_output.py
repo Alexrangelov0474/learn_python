@@ -1,16 +1,14 @@
-total = 0
-command = input()
-while command not in ["special", "regular"]:
-    price = float(command)
+version = list(map(int, input().split(".")))
 
-    if price > 0:
-        total += price
+version[2] += 1
 
-    command = input()
+if version[2] == 10:
+    version[2] = 0
+    version[1] += 1
 
-total_with_tax = total * 1.20
+if version[1] == 10:
+    version[1] = 0
+    version[0] += 1
 
-if command == "special":
-    total_with_tax *= 0.90
 
-print(f"{total_with_tax:.2f}")
+print(f"{version[0]}.{version[1]}.{version[2]}")
