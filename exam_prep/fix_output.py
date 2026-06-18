@@ -1,19 +1,16 @@
-days = int(input())
-plunder_per_day = int(input())
-target = int(input())
+elements = input().split()
+moves = 0
+command = input()
 
-total = 0
+while command != "end":
+    moves += 1
+    first, second = map(int, command.split())
 
-for day in range(1, days):
-    total += plunder_per_day
+    if first == second:
+        middle = len(elements) // 2
 
-    if day % 3 == 0:
-        total += plunder_per_day * 1.5
+        elements.insert(middle, f"-{moves}a")
+        elements.insert(middle, f"-{moves}a")
 
-    if day % 5 == 0:
-        total *= 0.70
-
-if total >= target:
-    print("Success!")
-else:
-    print("Failed!")
+    command = input()
+print(elements)
