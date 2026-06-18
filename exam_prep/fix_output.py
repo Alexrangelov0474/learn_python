@@ -1,16 +1,16 @@
-elements = input().split()
-moves = 0
+total = 0
 command = input()
+while command not in ["special", "regular"]:
+    price = float(command)
 
-while command != "end":
-    moves += 1
-    first, second = map(int, command.split())
-
-    if first == second:
-        middle = len(elements) // 2
-
-        elements.insert(middle, f"-{moves}a")
-        elements.insert(middle, f"-{moves}a")
+    if price > 0:
+        total += price
 
     command = input()
-print(elements)
+
+total_with_tax = total * 1.20
+
+if command == "special":
+    total_with_tax *= 0.90
+
+print(f"{total_with_tax:.2f}")
