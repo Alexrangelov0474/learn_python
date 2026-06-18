@@ -1,16 +1,19 @@
-groceries = input().split("!")
+days = int(input())
+plunder_per_day = int(input())
+target = int(input())
 
-command = input()
+total = 0
 
-while command != "Go Shopping!":
-    taken_command = command.split()
-    action = taken_command[0]
-    item = taken_command[1]
+for day in range(1, days):
+    total += plunder_per_day
 
-    if action == "Urgent":
-        if item not in groceries:
-            groceries = [item] + groceries
+    if day % 3 == 0:
+        total += plunder_per_day * 1.5
 
-    command = input()
+    if day % 5 == 0:
+        total *= 0.70
 
-print(", ".join(groceries))
+if total >= target:
+    print("Success!")
+else:
+    print("Failed!")
