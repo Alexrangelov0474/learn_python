@@ -6,6 +6,10 @@ class Comment:
 
 
 comment = Comment('user1', 'I like this book')
+# print(f'{comment.username}\n{comment.content}\n{comment.likes}')
+
 print(comment.username)
 print(comment.content)
 print(comment.likes)
+
+
