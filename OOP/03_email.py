@@ -19,8 +19,8 @@ while True:
     if data[0] == 'Stop':
         break
 
-    sender, receiver, content = data
-    email = Email(sender, receiver, content)
+    sender_name, receiver_name, content_type = data
+    email = Email(sender_name, receiver_name, content_type)
     emails.append(email)
 
 indices = list(map(int, input().split(', ')))
