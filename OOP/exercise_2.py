@@ -14,7 +14,6 @@ class Dog:
     def get_info(self):
         return f'{self.name} is a {self.color} {self.breed} and is {self.age} years old, and have {self.paws} paws.'
 
-    def dog_age(self):
 
 dog_name = input()
 dog_bread = input()
