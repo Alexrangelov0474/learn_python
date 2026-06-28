@@ -11,7 +11,19 @@ class Class:
             self.grades.append(grade)
 
     def get_average_grade(self):
-        pass
+        average_grade = sum(self.grades) / len(self.grades)
+        return float(f'{average_grade:.2f}')
 
     def __repr__(self) -> str:
-        pass
+        students = ', '.join(self.students)
+        average_grade = self.get_average_grade()
+        return f"The students in {self.name}: {students}." \
+               f" Average grade: {average_grade}"
+
+        # f"The students in {self.name}: {', '.join(self.students)}.\nAverage grade: {average_grade}"
+
+a_class = Class("11B")
+a_class.add_student("Peter", 4.80)
+a_class.add_student("George", 6.00)
+a_class.add_student("Amy", 3.50)
+print(a_class)
