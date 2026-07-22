@@ -11,8 +11,9 @@ def check_valid_barcode(barcode:str) -> str:
     if len(found_barcode) < 6:
         return 'Invalid barcode'
 
+
     elif (not found_barcode[0].isupper()
-          or not found_barcode[0].isupper()):
+          or not found_barcode[-1].isupper()):
         return 'Invalid barcode'
 
     elif not found_barcode.isalnum():
