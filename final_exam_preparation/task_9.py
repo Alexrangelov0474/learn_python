@@ -28,9 +28,6 @@ def replace_skill(employees_dict: dict,some_name:str, some_skill: str) -> None:
         if current_skills:
             employees_dict[some_name][0] = some_skill
 
-
-
-
 string = input()
 employees = extract_data(string)
 
