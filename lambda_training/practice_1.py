@@ -32,6 +32,18 @@ students = [
     ("Georgi", [6, 5, 5])
 ]
 
-sorted(students, key=lambda person: (-(sum(person[1]) / len(students[1])), students[0]))
+students_with_average = []
+
+for name, grades in students:
+    average = sum(grades) / len(grades)
+    students_with_average.append((name, average))
+
+sorted_students = sorted(
+    students_with_average,
+    key=lambda student: (-student[1], student[0])
+)
+
+for name, average in sorted_students:
+    print(f"{name} -> {average:.2f}")
 
 
