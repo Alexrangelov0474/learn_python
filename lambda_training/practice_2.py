@@ -101,13 +101,24 @@
 #
 # sorted_products = sorted(products, key=lambda product: (-product[2], product[1], product[0]))
 # print(sorted_products)
+#
+# cities = {
+#     "Varna": {"Gold": 100, "Wood": 50},
+#     "Sofia": {"Gold": 80, "Stone": 100},
+#     "Burgas": {"Food": 150},
+#     "Plovdiv": {"Gold": 70, "Wood": 80}
+# }
+#
+# sorted_cities = sorted(cities.items(), key=lambda current_city: (-(sum(current_city[1].values())), current_city[0]))
+# print(sorted_cities)
 
-cities = {
-    "Varna": {"Gold": 100, "Wood": 50},
-    "Sofia": {"Gold": 80, "Stone": 100},
-    "Burgas": {"Food": 150},
-    "Plovdiv": {"Gold": 70, "Wood": 80}
-}
-
-sorted_cities = sorted(cities.items(), key=lambda current_city: (-(sum(current_city[1].values())), current_city[0]))
-print(sorted_cities)
+# employees = [
+#     ("Ivan", 3200, 5),
+#     ("Maria", 4500, 2),
+#     ("Petar", 4500, 7),
+#     ("Georgi", 3200, 10),
+#     ("Anna", 3200, 10)
+# ]
+#
+# sorted_employees = sorted(employees, key=lambda current_employeer: (-current_employeer[1], - current_employeer[2], current_employeer[0]))
+# print(sorted_employees)
