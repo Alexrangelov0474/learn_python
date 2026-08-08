@@ -173,4 +173,38 @@
 # sorted_players = sorted(players_kd_ratio, key=lambda player: (-player[1], -player[2], player[0]))
 # print(sorted_players)
 
+#
+# products = [
+#     ("Laptop", 1500, 4.7, 120),
+#     ("Phone", 900, 4.8, 250),
+#     ("Monitor", 400, 4.8, 180),
+#     ("Keyboard", 100, 4.5, 300),
+#     ("Mouse", 50, 4.7, 150)
+# ]
+#
+# sorted_products = sorted(products, key=lambda product: (-product[2], -product[3], product[1]))
+# print(sorted_products)
 
+players = [
+    ("Ivan", {"kills": 25, "deaths": 5}),
+    ("Maria", {"kills": 30, "deaths": 10}),
+    ("Petar", {"kills": 20, "deaths": 2}),
+    ("Georgi", {"kills": 30, "deaths": 5}),
+    ("Anna", {"kills": 25, "deaths": 5}),
+]
+
+players_with_kd = []
+
+def get_kd_ratio(current_kills:int, current_deaths:int) -> float:
+    current_kd_ratio = current_kills / current_deaths
+    return current_kd_ratio
+
+for player_data in players:
+    player_name = player_data[0]
+    kills = player_data[1]['kills']
+    deaths = player_data[1]['deaths']
+    kd_ratio = get_kd_ratio(kills, deaths)
+    players_with_kd.append((player_name, kd_ratio, kills))
+
+sorted_players = sorted(players_with_kd, key=lambda player: (-player[1], -player[2], player[0]))
+print(sorted_players)
