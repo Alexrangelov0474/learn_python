@@ -72,3 +72,15 @@
 #
 # for name, kd, kills in sorted_players:
 #     print(f"{name} -> {kd}")
+
+
+students = [
+    ("Ivan", [6, 5, 6]),
+    ("Maria", [4, 5, 4]),
+    ("Petar", [6, 6, 6]),
+    ("Georgi", [5, 5, 5]),
+]
+
+sorted_students = sorted(students, key=lambda student: (sum(student[1]) / len(student[1]) < 5, -(sum(student[1]) / len(student[1])), student[0]))
+
+print(sorted_students)
