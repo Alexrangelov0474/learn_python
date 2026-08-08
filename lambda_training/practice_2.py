@@ -32,22 +32,43 @@
 # for city, average_resource in sorted_cities:
 #     print(f"{city} -> {average_resource:.2f}")
 
-players = [
-    ("Ivan", {"kills": 15, "deaths": 3}),
-    ("Maria", {"kills": 20, "deaths": 10}),
-    ("Petar", {"kills": 12, "deaths": 2}),
-    ("Georgi", {"kills": 20, "deaths": 5}),
-]
+# players = [
+#     ("Ivan", {"kills": 15, "deaths": 3}),
+#     ("Maria", {"kills": 20, "deaths": 10}),
+#     ("Petar", {"kills": 12, "deaths": 2}),
+#     ("Georgi", {"kills": 20, "deaths": 5}),
+# ]
+#
+# players_average = []
+#
+# for player_name, kills_and_deaths in players:
+#     kills = kills_and_deaths["kills"]
+#     deaths = kills_and_deaths["deaths"]
+#     kd_ratio = kills / deaths
+#     players_average.append((player_name, kd_ratio))
+#
+# sorted_players = sorted(players_average, key=lambda current_player: (-current_player[1], current_player[0]))
+#
+# for player, kd in sorted_players:
+#     print(f"{player} -> {kd}")
 
-players_average = []
 
-for player_name, kills_and_deaths in players:
-    kills = kills_and_deaths["kills"]
-    deaths = kills_and_deaths["deaths"]
-    kd_ratio = kills / deaths
-    players_average.append((player_name, kd_ratio))
-
-sorted_players = sorted(players_average, key=lambda current_player: (-current_player[1], current_player[0]))
-
-for player, kd in sorted_players:
-    print(f"{player} -> {kd}")
+# players = [
+#     ("Ivan", {"kills": 15, "deaths": 3}),
+#     ("Maria", {"kills": 20, "deaths": 10}),
+#     ("Petar", {"kills": 12, "deaths": 2}),
+#     ("Georgi", {"kills": 20, "deaths": 5}),
+# ]
+#
+# kd_players = []
+#
+# for player_name, kd_stats in players:
+#     kills = kd_stats['kills']
+#     deaths = kd_stats['deaths']
+#     kd_ration = kills/deaths
+#     kd_players.append((player_name, kd_ration, kills))
+#
+# sorted_players = sorted(kd_players, key=lambda current_player: (-current_player[1], -current_player[2], current_player[0]))
+#
+# for name, kd, kills in sorted_players:
+#     print(f"{name} -> {kd}")
