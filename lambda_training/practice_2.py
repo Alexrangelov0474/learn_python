@@ -91,10 +91,23 @@
 
 
 
-products = [
-    ("Laptop", 1500, 4.7),
-    ("Phone", 900, 4.8),
-    ("Monitor", 400, 4.8),
-    ("Keyboard", 100, 4.5),
-    ("Mouse", 50, 4.7)
-]
+# products = [
+#     ("Laptop", 1500, 4.7),
+#     ("Phone", 900, 4.8),
+#     ("Monitor", 400, 4.8),
+#     ("Keyboard", 100, 4.5),
+#     ("Mouse", 50, 4.7)
+# ]
+#
+# sorted_products = sorted(products, key=lambda product: (-product[2], product[1], product[0]))
+# print(sorted_products)
+
+cities = {
+    "Varna": {"Gold": 100, "Wood": 50},
+    "Sofia": {"Gold": 80, "Stone": 100},
+    "Burgas": {"Food": 150},
+    "Plovdiv": {"Gold": 70, "Wood": 80}
+}
+
+sorted_cities = sorted(cities.items(), key=lambda current_city: (-(sum(current_city[1].values())), current_city[0]))
+print(sorted_cities)
