@@ -8,6 +8,7 @@
 # sorted_books = sorted(books, key=lambda book: (-book[1], -book[2], book[0]))
 # print(sorted_books)
 
+
 # cities = {
 #     "Varna": {
 #         "Gold": 100,
@@ -32,6 +33,7 @@
 # for city, average_resource in sorted_cities:
 #     print(f"{city} -> {average_resource:.2f}")
 
+
 # players = [
 #     ("Ivan", {"kills": 15, "deaths": 3}),
 #     ("Maria", {"kills": 20, "deaths": 10}),
@@ -51,6 +53,7 @@
 #
 # for player, kd in sorted_players:
 #     print(f"{player} -> {kd}")
+
 
 
 # players = [
@@ -74,13 +77,24 @@
 #     print(f"{name} -> {kd}")
 
 
-students = [
-    ("Ivan", [6, 5, 6]),
-    ("Maria", [4, 5, 4]),
-    ("Petar", [6, 6, 6]),
-    ("Georgi", [5, 5, 5]),
+
+# students = [
+#     ("Ivan", [6, 5, 6]),
+#     ("Maria", [4, 5, 4]),
+#     ("Petar", [6, 6, 6]),
+#     ("Georgi", [5, 5, 5]),
+# ]
+#
+# sorted_students = sorted(students, key=lambda student: (sum(student[1]) / len(student[1]) < 5, -(sum(student[1]) / len(student[1])), student[0]))
+#
+# print(sorted_students)
+
+
+
+products = [
+    ("Laptop", 1500, 4.7),
+    ("Phone", 900, 4.8),
+    ("Monitor", 400, 4.8),
+    ("Keyboard", 100, 4.5),
+    ("Mouse", 50, 4.7)
 ]
-
-sorted_students = sorted(students, key=lambda student: (sum(student[1]) / len(student[1]) < 5, -(sum(student[1]) / len(student[1])), student[0]))
-
-print(sorted_students)
