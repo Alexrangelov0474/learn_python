@@ -260,3 +260,15 @@
 #
 # sorted_games = sorted(games, key=lambda game: (-game[2],-game[3], game[1], game[0]))
 # print(sorted_games)
+
+# students = [
+#     ("Ivan", [6, 5, 6]),
+#     ("Maria", [4, 5, 4]),
+#     ("Petar", [6, 6, 5]),
+#     ("Georgi", [5, 5, 5]),
+#     ("Anna", [4, 4, 5]),
+# ]
+# sorted_students = sorted(students, key=lambda student: (-(sum(student[1]) / len(student[1]) >= 5),
+#                                                         -(sum(student[1]) / len(student[1])), student[0]))
+# print(sorted_students)
+
