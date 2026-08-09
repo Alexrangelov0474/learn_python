@@ -248,3 +248,15 @@
 #                                                            -employee[1]['projects'],
 #                                                            employee[0]))
 # print(sorted_employees)
+
+
+# games = [
+#     ("CS2", 120, 8.5, 150),
+#     ("Minecraft", 200, 9.0, 100),
+#     ("GTA V", 150, 8.5, 200),
+#     ("Valorant", 100, 8.8, 180),
+#     ("R6 Siege", 80, 8.5, 200),
+# ]
+#
+# sorted_games = sorted(games, key=lambda game: (-game[2],-game[3], game[1], game[0]))
+# print(sorted_games)
