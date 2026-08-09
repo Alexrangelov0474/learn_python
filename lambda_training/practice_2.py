@@ -287,3 +287,19 @@
 #                                                            employee[0]))
 # print(sorted_employees)
 
+# products = [
+#     ("Laptop", {"price": 1500, "rating": 4.7, "sales": 120}),
+#     ("Phone", {"price": 900, "rating": 4.8, "sales": 250}),
+#     ("Monitor", {"price": 400, "rating": 4.8, "sales": 180}),
+#     ("Keyboard", {"price": 100, "rating": 4.5, "sales": 300}),
+#     ("Mouse", {"price": 50, "rating": 4.7, "sales": 150}),
+#     ("Tablet", {"price": 900, "rating": 4.8, "sales": 250}),
+# ]
+#
+# sorted_employees = sorted(products, key=lambda product:(-product[1]['rating'],
+#                                                         -product[1]['sales'],
+#                                                         product[1]['price'],
+#                                                         product[0]))
+#
+# print(sorted_employees)
+
