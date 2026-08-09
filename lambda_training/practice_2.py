@@ -303,3 +303,62 @@
 #
 # print(sorted_employees)
 
+# cities = {
+#     "Sofia": {
+#         "population": 1200000,
+#         "area": 492,
+#         "rating": 4.5
+#     },
+#     "Varna": {
+#         "population": 350000,
+#         "area": 238,
+#         "rating": 4.7
+#     },
+#     "Burgas": {
+#         "population": 200000,
+#         "area": 253,
+#         "rating": 4.7
+#     },
+#     "Plovdiv": {
+#         "population": 340000,
+#         "area": 102,
+#         "rating": 4.5
+#     },
+#     "Ruse": {
+#         "population": 150000,
+#         "area": 127,
+#         "rating": 4.2
+#     }
+# }
+#
+# sorted_cities = sorted(cities.items(), key=lambda city:(-city[1]['rating'], -city[1]['population'], city[1]['area'], city[0]))
+# print(sorted_cities)
+
+#
+# players = [
+#     ("Ivan", {"kills": 25, "deaths": 5, "matches": 10}),
+#     ("Maria", {"kills": 30, "deaths": 10, "matches": 15}),
+#     ("Petar", {"kills": 20, "deaths": 2, "matches": 8}),
+#     ("Georgi", {"kills": 30, "deaths": 5, "matches": 12}),
+#     ("Anna", {"kills": 25, "deaths": 5, "matches": 10}),
+#     ("Stefan", {"kills": 30, "deaths": 5, "matches": 12}),
+# ]
+#
+# players_with_kd = []
+#
+# def get_kd(current_kills: int, current_deaths: int) -> float:
+#     current_kd_ration = current_kills / current_deaths
+#     return current_kd_ration
+#
+# for player_stats in players:
+#     player_name = player_stats[0]
+#     kills = player_stats[1]['kills']
+#     deaths = player_stats[1]['deaths']
+#     matches = player_stats[1]['matches']
+#     kd_ratio = get_kd(kills,deaths)
+#     players_with_kd.append((player_name, kd_ratio, kills, matches))
+#
+# # sorted_players = sorted(players, key=lambda player: (-(player[1]['kills']) / (player[1]['deaths']), -player[1]['kills'], -player[1]['matches'], player[0]))
+#
+# sorted_players = sorted(players_with_kd, key=lambda player:(-player[1],-player[2], -player[3], player[0]))
+# print(sorted_players)
