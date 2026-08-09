@@ -234,3 +234,17 @@
 #                                                          -city[1]['area'],
 #                                                          city[0]))
 # print(sorted_cities)
+
+# employees = [
+#     ("Ivan", {"salary": 3200, "experience": 5, "projects": 12}),
+#     ("Maria", {"salary": 4500, "experience": 2, "projects": 20}),
+#     ("Petar", {"salary": 4500, "experience": 7, "projects": 15}),
+#     ("Georgi", {"salary": 3200, "experience": 10, "projects": 12}),
+#     ("Anna", {"salary": 3200, "experience": 10, "projects": 18}),
+# ]
+#
+# sorted_employees = sorted(employees, key=lambda employee: (-employee[1]['salary'],
+#                                                            -employee[1]['experience'],
+#                                                            -employee[1]['projects'],
+#                                                            employee[0]))
+# print(sorted_employees)
