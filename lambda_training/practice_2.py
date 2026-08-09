@@ -272,3 +272,18 @@
 #                                                         -(sum(student[1]) / len(student[1])), student[0]))
 # print(sorted_students)
 
+# employees = [
+#     ("Ivan", {"salary": 3200, "experience": 5, "projects": 12}),
+#     ("Maria", {"salary": 4500, "experience": 2, "projects": 20}),
+#     ("Petar", {"salary": 4500, "experience": 7, "projects": 15}),
+#     ("Georgi", {"salary": 3200, "experience": 10, "projects": 12}),
+#     ("Anna", {"salary": 3200, "experience": 10, "projects": 18}),
+#     ("Stefan", {"salary": 4500, "experience": 7, "projects": 15}),
+# ]
+#
+# sorted_employees = sorted(employees, key=lambda employee: (-employee[1]['salary'],
+#                                                            -employee[1]["experience"],
+#                                                            -employee[1]["projects"],
+#                                                            employee[0]))
+# print(sorted_employees)
+
