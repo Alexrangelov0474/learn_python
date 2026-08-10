@@ -41,14 +41,21 @@
 # print(result)
 
 
-# students = [
-#     ("Ivan", 5.50),
-#     ("Maria", 4.20),
-#     ("Petar", 5.80),
-#     ("Georgi", 3.90),
-#     ("Anna", 5.10),
-# ]
-#
+students = [
+    ("Ivan", 5.50),
+    ("Maria", 4.20),
+    ("Petar", 5.80),
+    ("Georgi", 3.90),
+    ("Anna", 5.10),
+]
+
+# ВАРИАНТИ ЗА МАНИПУЛИРАНЕ НА ЛАМБДАТА. МОЖЕ ДА ВРЪЩА КАКВОТО МУ ЗАДАДЕМ.
+
 # filtered_students = list(filter(lambda student: student[1] >= 5.00, students))
 # result = list(map(lambda student: (student[0],student[1] + 0.50), filtered_students))
+# result = list(map(lambda student: {"name": student[0],"grade": student[1] + 0.5}, filtered_students))
+# result = tuple(map(lambda student: {"name": student[0],"grade": student[1] + 0.5}, filtered_students))
+# result = dict(map(lambda student: (student[0], student[1] + 0.5), filtered_students))
+# result = list(map(lambda student:{'student': (student[0], student[1] + 0.5)}, filtered_students))
 # print(result)
+
