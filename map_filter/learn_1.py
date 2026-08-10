@@ -18,10 +18,37 @@
 # filtered_players = list(filter(lambda player: player[1] >= 21, players))
 # print(filtered_players)
 
-players = [
-    ("Ivan", 25),
-    ("Maria", 18),
-    ("Petar", 30),
-    ("Georgi", 16),
-    ("Anna", 22),
-]
+# players = [
+#     ("Ivan", 25),
+#     ("Maria", 18),
+#     ("Petar", 30),
+#     ("Georgi", 16),
+#     ("Anna", 22),
+# ]
+# filtere_players = list(filter(lambda player: player[1] >= 21, players))
+# result = list(map(lambda player: player[0], filtere_players))
+# print(result)
+
+# products = [
+#     ("Laptop", 1500),
+#     ("Phone", 900),
+#     ("Monitor", 400),
+#     ("Keyboard", 100),
+#     ("Mouse", 50),
+# ]
+# filtered_products = list(filter(lambda product: product[1] >= 400, products))
+# result = list(map(lambda product: product[0], filtered_products))
+# print(result)
+
+
+# students = [
+#     ("Ivan", 5.50),
+#     ("Maria", 4.20),
+#     ("Petar", 5.80),
+#     ("Georgi", 3.90),
+#     ("Anna", 5.10),
+# ]
+#
+# filtered_students = list(filter(lambda student: student[1] >= 5.00, students))
+# result = list(map(lambda student: (student[0],student[1] + 0.50), filtered_students))
+# print(result)
