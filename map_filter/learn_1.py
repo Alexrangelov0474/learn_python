@@ -144,3 +144,31 @@
 #
 # for name, grade in result.items():
 #     print(f"{name} :{grade:.2f}")
+
+# students = [
+#     {"name": "Ivan", "grade": 5.20},
+#     {"name": "Maria", "grade": 4.30},
+#     {"name": "Petar", "grade": 5.80},
+#     {"name": "Georgi", "grade": 3.90},
+#     {"name": "Anna", "grade": 5.50},
+#     {"name": "Stefan", "grade": 4.90}
+# ]
+#
+# filtered_students = list(filter(lambda student: student['grade'] >= 5.00, students))
+# result = list(map(lambda student: {'name' : student['name'], 'grade' : student['grade'] + 0.20},  filtered_students))
+# for current_student in result:
+#     print(f"{current_student['name']}: {current_student['grade']:.2f}")
+
+# products = [
+#     {"name": "Laptop", "price": 1500, "category": "Electronics"},
+#     {"name": "Phone", "price": 900, "category": "Electronics"},
+#     {"name": "Desk", "price": 350, "category": "Furniture"},
+#     {"name": "Monitor", "price": 600, "category": "Electronics"},
+#     {"name": "Chair", "price": 250, "category": "Furniture"},
+#     {"name": "Keyboard", "price": 120, "category": "Electronics"},
+# ]
+# filtered_products = (filter(lambda product: (product['category'] == 'Electronics' and product['price'] >= 500), products))
+# result = list(map(lambda product: {'name' : product['name'], 'price' : product['price'] * 1.15}, filtered_products))
+# for current_product in result:
+#     print(f'{current_product["name"]}: {current_product["price"]:.2f}')
+
