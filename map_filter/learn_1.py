@@ -77,14 +77,28 @@
 # print(result)
 
 
-products = [
-    ("Laptop", 1500),
-    ("Phone", 900),
-    ("Monitor", 400),
-    ("Keyboard", 100),
-    ("Mouse", 50),
-    ("Tablet", 800),
-]
-filtered_products = list(filter(lambda product: product[1] >= 500, products))
-result = list(map(lambda product: (product[0], round(product[1] * 1.10, 2)) , filtered_products))
-print(result)
+# products = [
+#     ("Laptop", 1500),
+#     ("Phone", 900),
+#     ("Monitor", 400),
+#     ("Keyboard", 100),
+#     ("Mouse", 50),
+#     ("Tablet", 800),
+# ]
+# filtered_products = list(filter(lambda product: product[1] >= 500, products))
+# result = list(map(lambda product: (product[0], round(product[1] * 1.10, 2)) , filtered_products))
+#
+# print(result)
+
+# players = {
+#     "Ivan": 25,
+#     "Maria": 18,
+#     "Petar": 30,
+#     "Georgi": 16,
+#     "Anna": 22,
+#     "Stefan": 19,
+# }
+#
+# filtered_products = (filter(lambda player: player[1] >= 20, players.items()))
+# result = dict(map(lambda player: (player[0], player[1] + 1), filtered_products))
+# print(result)
