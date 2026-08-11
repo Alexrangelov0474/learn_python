@@ -129,3 +129,18 @@
 # filtered_employees = filter(lambda employee: employee[1] >= 1200, employees.items())
 # result = dict(map(lambda employee: (employee[0], round(employee[1] * 1.10, 2)), filtered_employees))
 # print(result)
+
+# students = {
+#     "Ivan": 5.20,
+#     "Maria": 4.30,
+#     "Petar": 5.80,
+#     "Georgi": 3.90,
+#     "Anna": 5.50,
+#     "Stefan": 4.90
+# }
+#
+# filtered_students = filter(lambda student: student[1] >= 5.00, students.items())
+# result = dict(map(lambda student:(student[0], student[1] + 0.30, 2), filtered_students))
+#
+# for name, grade in result.items():
+#     print(f"{name} :{grade:.2f}")
