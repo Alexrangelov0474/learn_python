@@ -102,3 +102,30 @@
 # filtered_products = (filter(lambda player: player[1] >= 20, players.items()))
 # result = dict(map(lambda player: (player[0], player[1] + 1), filtered_products))
 # print(result)
+#
+# products = {
+#     "Laptop": 1500,
+#     "Phone": 900,
+#     "Monitor": 400,
+#     "Keyboard": 100,
+#     "Mouse": 50,
+#     "Tablet": 800
+# }
+#
+#
+# filtered_products = filter(lambda product: product[1] >= 500 , products.items())
+# result = dict(map(lambda product: (product[0], round(product[1] * 1.20, 2)), filtered_products))
+# print(result)
+
+# employees = {
+#     "Ivan": 1200,
+#     "Maria": 1800,
+#     "Petar": 950,
+#     "Georgi": 2200,
+#     "Anna": 1600,
+#     "Stefan": 800
+# }
+#
+# filtered_employees = filter(lambda employee: employee[1] >= 1200, employees.items())
+# result = dict(map(lambda employee: (employee[0], round(employee[1] * 1.10, 2)), filtered_employees))
+# print(result)
