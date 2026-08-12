@@ -140,10 +140,10 @@
 # }
 #
 # filtered_students = filter(lambda student: student[1] >= 5.00, students.items())
-# result = dict(map(lambda student:(student[0], student[1] + 0.30, 2), filtered_students))
+# result = dict(map(lambda student:(student[0], student[1] + 0.30), filtered_students))
 #
 # for name, grade in result.items():
-#     print(f"{name} :{grade:.2f}")
+#     print(f"{name}: {grade:.2f}")
 
 # students = [
 #     {"name": "Ivan", "grade": 5.20},
