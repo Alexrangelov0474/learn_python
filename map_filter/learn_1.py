@@ -172,3 +172,46 @@
 # for current_product in result:
 #     print(f'{current_product["name"]}: {current_product["price"]:.2f}')
 
+# orders = [
+#     {"customer": "Ivan", "total": 120, "status": "completed"},
+#     {"customer": "Maria", "total": 80, "status": "pending"},
+#     {"customer": "Petar", "total": 250, "status": "completed"},
+#     {"customer": "Georgi", "total": 50, "status": "cancelled"},
+#     {"customer": "Anna", "total": 180, "status": "completed"},
+#     {"customer": "Stefan", "total": 90, "status": "completed"},
+# ]
+#
+# filtered_orders = filter(lambda order: (order['status'] == 'completed' and order['total'] >= 100), orders)
+# new_orders = list(map(lambda order: {'customer' : order['customer'], 'total' : order['total'] * 1.10}, filtered_orders))
+# for current_order in new_orders:
+#     print(f'{current_order["customer"]} : {current_order["total"]:.2f}')
+
+# employees = [
+#     {"name": "Ivan", "salary": 1800, "department": "IT"},
+#     {"name": "Maria", "salary": 2200, "department": "HR"},
+#     {"name": "Petar", "salary": 1500, "department": "IT"},
+#     {"name": "Georgi", "salary": 2800, "department": "Finance"},
+#     {"name": "Anna", "salary": 1900, "department": "HR"},
+#     {"name": "Stefan", "salary": 1200, "department": "Finance"},
+# ]
+# filtered_employees = filter(lambda employee: (employee['department'] == 'IT' or employee['salary'] >= 2500),employees)
+# new_employees = list(map(lambda employee: {'name' : employee['name'], 'salary' : employee['salary'] * 1.08}, filtered_employees))
+# for current_employee in new_employees:
+#     print(f'{current_employee["name"]}: {current_employee["salary"]:.2f}')
+
+# products = [
+#     {"name": "Laptop", "price": 1500, "rating": 4.7},
+#     {"name": "Phone", "price": 900, "rating": 4.8},
+#     {"name": "Monitor", "price": 400, "rating": 4.8},
+#     {"name": "Keyboard", "price": 100, "rating": 4.5},
+#     {"name": "Mouse", "price": 50, "rating": 4.7},
+#     {"name": "Tablet", "price": 800, "rating": 4.9},
+# ]
+# filtered_products = filter(lambda product: product['price'] >= 500,  products)
+# new_products = list(map(lambda product: {'name' : product['name'],
+#                                          'price' : product['price'] * 1.10,
+#                                          'rating' : product['rating']}, filtered_products))
+#
+# sorted_products = sorted(new_products, key=lambda product_dict: (-product_dict['rating'], -product_dict['price'], product_dict['name']))
+# for product_as_dict in sorted_products:
+#     print(f'{product_as_dict["name"]}: {product_as_dict["price"]:.2f} - {product_as_dict["rating"]:.2f}')
