@@ -215,3 +215,26 @@
 # sorted_products = sorted(new_products, key=lambda product_dict: (-product_dict['rating'], -product_dict['price'], product_dict['name']))
 # for product_as_dict in sorted_products:
 #     print(f'{product_as_dict["name"]}: {product_as_dict["price"]:.2f} - {product_as_dict["rating"]:.2f}')
+
+players = [
+    {"name": "Ivan", "kills": 25, "deaths": 5, "rank": "gold"},
+    {"name": "Maria", "kills": 18, "deaths": 6, "rank": "silver"},
+    {"name": "Petar", "kills": 30, "deaths": 5, "rank": "gold"},
+    {"name": "Georgi", "kills": 20, "deaths": 10, "rank": "bronze"},
+    {"name": "Anna", "kills": 27, "deaths": 9, "rank": "gold"},
+    {"name": "Stefan", "kills": 22, "deaths": 4, "rank": "silver"},
+]
+
+def get_kd(current_player: dict)-> float:
+    kills, deaths = current_player['kills'], current_player['deaths']
+    kd_ratio = kills / deaths
+    return kd_ratio
+
+filtered_players = filter(lambda player: (player['rank'] == 'gold' or player['kills'] >= 22), players)
+# new_players = list(map(lambda player: {'name' : player['name'], 'kd' : player['kills'] / player['deaths']}, filtered_players))
+new_players = list(map(lambda player: {'name' : player['name'], 'kd' : get_kd(player)}, filtered_players))
+sorted_players = sorted(new_players, key=lambda player_dict:(-player_dict['kd'], player_dict['name']))
+
+for player_as_dict in sorted_players:
+    print(f'{player_as_dict["name"]}: {player_as_dict["kd"]:.2f}')
+
