@@ -254,3 +254,86 @@
 # sorted_employees = sorted(new_employees, key=lambda employee_dict: (-employee_dict['salary'], -employee_dict['experience'], employee_dict['name']))
 # for employee_as_dict in sorted_employees:
 #     print(f'{employee_as_dict["name"]}: {employee_as_dict["salary"]:.2f} - {employee_as_dict["experience"]} years')
+
+# players = [
+#     ("Ivan", 25, 1200),
+#     ("Maria", 18, 900),
+#     ("Petar", 30, 1500),
+#     ("Georgi", 22, 1100),
+#     ("Anna", 19, 1300),
+# ]
+# filtered_players = filter(lambda player: player[1] >= 21, players)
+# new_players = list(map(lambda player: (player[0], player[2] * 1.10), filtered_players))
+# sorted_players = sorted(new_players, key=lambda player: (-player[1], player[0]))
+# for name, salary in sorted_players:
+#     print(f'{name}: {salary:.2f}')
+
+# employees = (
+#     {"name": "Ivan", "salary": 1800, "experience": 3},
+#     {"name": "Maria", "salary": 2400, "experience": 5},
+#     {"name": "Petar", "salary": 2200, "experience": 7},
+#     {"name": "Georgi", "salary": 3000, "experience": 4},
+#     {"name": "Anna", "salary": 2000, "experience": 8},
+#     {"name": "Stefan", "salary": 2600, "experience": 8},
+# )
+# filtered_employees  = filter(lambda employee: (employee['salary'] >= 2000 or employee['experience'] >= 8), employees)
+# new_employees = tuple(map(lambda employee: {'name' : employee['name'], 'salary' : employee['salary'] * 1.05}, filtered_employees))
+# sorted_employees = sorted(new_employees, key=lambda employee: (-employee['salary'], employee['name']))
+#
+# for employee_as_dict in sorted_employees:
+#     print(f'{employee_as_dict["name"]}: {employee_as_dict["salary"]:.2f}')
+
+# products = [
+#     ("Laptop", 1500, 4.7, 120),
+#     ("Phone", 900, 4.8, 250),
+#     ("Monitor", 400, 4.8, 180),
+#     ("Keyboard", 100, 4.5, 300),
+#     ("Mouse", 50, 4.7, 150),
+#     ("Tablet", 800, 4.8, 250),
+#     ("Headphones", 120, 4.7, 250),
+# ]
+# filtered_products = filter(lambda product: (product[2] >= 4.7 and product[3] >= 150), products)
+# new_products = list(map(lambda product: (product[0], product[1] * 1.10, product[2]), filtered_products))
+# sorted_products = sorted(new_products, key=lambda product: (-product[2], -product[1], product[0]))
+#
+# for name, price, rating  in sorted_products:
+#     print(f'{name}: {price:.2f} - {rating}')
+
+players = [
+    {
+        "name": "Ivan",
+        "stats": {"kills": 25, "deaths": 5},
+        "rank": "gold"
+    },
+    {
+        "name": "Maria",
+        "stats": {"kills": 18, "deaths": 6},
+        "rank": "silver"
+    },
+    {
+        "name": "Petar",
+        "stats": {"kills": 30, "deaths": 5},
+        "rank": "gold"
+    },
+    {
+        "name": "Georgi",
+        "stats": {"kills": 20, "deaths": 10},
+        "rank": "bronze"
+    },
+    {
+        "name": "Anna",
+        "stats": {"kills": 27, "deaths": 9},
+        "rank": "gold"
+    }
+]
+
+def get_kd(current_player: dict)-> float:
+    kills, deaths = current_player['stats']['kills'], current_player['stats']['deaths']
+    kd_ratio = kills / deaths
+    return kd_ratio
+
+filtered_players = filter(lambda player: (player['rank'] == 'gold' and  player['stats']['kills'] >= 25), players)
+new_players = list(map(lambda player: {'name' : player['name'], 'kd' : get_kd(player)}, filtered_players))
+sorted_players = sorted(new_players, key=lambda player: (-player['kd'], player['name']))
+for player_as_dict in sorted_players:
+    print(f'{player_as_dict["name"]}: {player_as_dict["kd"]:.2f}')
