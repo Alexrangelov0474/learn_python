@@ -35,7 +35,7 @@ while True:
             guilds_and_heroes[guild_name][hero_name] = level
 
 def add_hero_to_guild(current_guild_name:str, current_hero_name:str, current_level: int, guilds_and_heroes_dict: dict):
-    if hero_exists(current_guild_name, current_hero_name, guilds_and_heroes_dict):
+    if not hero_exists(current_guild_name, current_hero_name, guilds_and_heroes_dict):
         guilds_and_heroes_dict[current_guild_name][current_hero_name] = current_level
 
 def levelup_hero(current_guild_name:str, current_hero_name:str, current_level: int, guilds_and_heroes_dict: dict):
@@ -69,4 +69,15 @@ while True:
         hero_name = command[2]
         remove_hero(guild_name, hero_name, guilds_and_heroes)
 
-# Следващата стъпка: Сортиране и отпечатване
+
+sorted_guilds = sorted(guilds_and_heroes.items(), key=lambda guilds: (-sum(guilds[1].values()), guilds[0]))
+
+for guild, heroes in sorted_guilds:
+    total_level = sum(heroes.values())
+
+    print(f'{guild} ({total_level})')
+
+    sorted_heroes = sorted(heroes.items(), key=lambda current_hero: (-current_hero[1], current_hero[0]))
+
+    for hero, level in sorted_heroes:
+        print(f'- {hero}: {level}')
