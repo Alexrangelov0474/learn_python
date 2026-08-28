@@ -47,26 +47,38 @@ def train_player(clan_dict: dict, current_clan_name: str, current_player_name: s
         clan_dict[current_clan_name][current_player_name] += points_to_add
 
 def kick_player(clan_dict: dict, current_clan_name: str, current_player_name: str):
-    if team_exists_checker(clan_dict, current_clan_name):
+    if team_exists_checker(clan_dict, current_clan_name) and \
+            player_exists_checker(clan_dict, current_clan_name, current_player_name):
         del clan_dict[current_clan_name][current_player_name]
 
-    while True:
-        current_command = input()
-        if current_command == 'End':
-            break
+while True:
+    current_command = input()
+    if current_command == 'End':
+        break
 
-        current_command = current_command.split(' => ')
-        action = current_command[0]
-        clan_name = current_command[1]
-        player_name = current_command[2]
+    current_command = current_command.split(' => ')
+    action = current_command[0]
+    clan_name = current_command[1]
+    player_name = current_command[2]
 
-        if action == 'Join':
-            player_score = int(current_command[3])
-            adding_player(clans, clan_name, player_name, player_score)
+    if action == 'Join':
+        player_score = int(current_command[3])
+        adding_player(clans, clan_name, player_name, player_score)
 
-        elif action == 'Train':
-            point = int(current_command[3])
-            train_player(clans, clan_name, player_name, point)
+    elif action == 'Train':
+        point = int(current_command[3])
+        train_player(clans, clan_name, player_name, point)
 
-        elif action == 'Kick':
-            kick_player(clans, clan_name, player_name)
+    elif action == 'Kick':
+        kick_player(clans, clan_name, player_name)
+
+sorted_clans = sorted(clans.items(), key=lambda current_clan: (-sum(current_clan[1].values()), current_clan[0]))
+
+for clan, players in sorted_clans:
+    total_score = sum(players.values())
+    print(f'{clan} ({total_score})')
+
+    sorted_players = sorted(players.items(), key=lambda current_player: (-current_player[1], current_player[0]))
+
+    for player, score in sorted_players:
+        print(f'- {player}: {score}')
