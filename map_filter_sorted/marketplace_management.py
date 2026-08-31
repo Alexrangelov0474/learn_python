@@ -92,4 +92,25 @@ while True:
         sell_quantity = int(command[3])
         sell_product(stores, store, product, sell_quantity)
 
+def calculate_product_value(current_product: dict) -> float:
+    return current_product['price'] * current_product['quantity']
 
+def calculate_store_value(current_products: dict) -> float:
+    return sum(calculate_product_value(current_products) for current_products in current_products.values())
+
+sorted_stores = sorted(stores.items(), key=lambda current_store: (-calculate_store_value(current_store[1]), current_store[0]))
+
+for store, products in sorted_stores:
+    total_value = calculate_store_value(products)
+    print(f'{store} ({total_value:.2f})')
+
+    sorted_products = sorted(products.items(), key=lambda item: (-calculate_product_value(item[1]),item[0]))
+
+    for product, data in sorted_products:
+        value = calculate_product_value(data)
+        print(
+            f'- {product}: '
+            f"price={data['price']:.2f}, "
+            f"quantity={data['quantity']}, "
+            f'value={value:.2f}'
+        )
