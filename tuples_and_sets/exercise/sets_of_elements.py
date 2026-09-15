@@ -1,4 +1,6 @@
-n_lines, m_lines = ([int(el) for el in input().split()])
+# n_lines, m_lines = ([int(el) for el in input().split()])
+n_lines, m_lines = map(int, input().split())
+
 n_set = set()
 m_set = set()
 
