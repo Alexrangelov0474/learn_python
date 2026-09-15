@@ -1,19 +1,14 @@
+def create_set(range_str: str)-> set:
+    start, end = range_str.split(',')
+    return set(range(int(start), int(end) + 1))
+
 longest_intersection = set()
 
 for _ in range(int(input())):
-    first_set = set()
-    second_set = set()
     line = input().split('-')
-    first_start, first_end = line[0].split(',')
-    second_start, second_end = line[1].split(',')
 
-    for num in range(int(first_start), int(first_end) + 1):
-        first_set.add(num)
-
-
-    for num in range(int(second_start), int(second_end) + 1):
-        second_set.add(num)
-
+    first_set = create_set(line[0])
+    second_set = create_set(line[1])
 
     current_intersection = first_set.intersection(second_set)
 
