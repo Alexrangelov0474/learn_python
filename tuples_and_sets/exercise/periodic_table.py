@@ -8,3 +8,5 @@ for _ in range(int(input())):
 # for element in chemical_compounds:
 #     print(element)
 print(*chemical_compounds, sep='\n')
+
+# print(*{el for _ in range(int(input())) for el in input().split()}, sep='\n')
