@@ -13,12 +13,14 @@ milkshakes = 0
 
 while chocolate and cups_of_milk and milkshakes < 5:
 
-    if chocolate[-1] <= 0:
-        chocolate.pop()
-        continue
+    if chocolate[-1] <= 0 or cups_of_milk[0] <= 0:
 
-    if cups_of_milk[0] <= 0:
-        cups_of_milk.popleft()
+        if chocolate[-1] <= 0:
+            chocolate.pop()
+
+        if cups_of_milk[0] <= 0:
+            cups_of_milk.popleft()
+
         continue
 
     if chocolate[-1] == cups_of_milk[0]:
