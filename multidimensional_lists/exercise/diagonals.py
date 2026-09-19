@@ -1,21 +1,29 @@
 n_rows = int(input())
 
-matrix = []
+# matrix = []
+#
+# for _ in range(n_rows):
+#     numbers = [int(n) for n in input().split(', ')]
+#     matrix.append(numbers)
+#
+#
+# primary_diagonal = []
+# secondary_diagonal = []
+#
+#
+# for index in range(n_rows):
+#     primary_diagonal.append(matrix[index][index])
+#     secondary_diagonal.append(matrix[index][-1 - index])
+#
+# print(f'Primary diagonal: {", ".join(str(n) for n in primary_diagonal)}. Sum: {sum(primary_diagonal)}')
+# print(f'Secondary diagonal: {", ".join(str(n) for n in secondary_diagonal)}. Sum: {sum(secondary_diagonal)}')
+#
+#
+matrix = [[int(n) for n in input().split(', ')] for _ in range(n_rows)]
 
-for _ in range(n_rows):
-    numbers = [int(n) for n in input().split(', ')]
-    matrix.append(numbers)
-
-
-primary_diagonal = []
-secondary_diagonal = []
-
-
-for index in range(n_rows):
-    primary_diagonal.append(matrix[index][index])
-    secondary_diagonal.append(matrix[index][-index -1])
+primary_diagonal = [matrix[index][index] for index in range(n_rows)]
+secondary_diagonal = [matrix[index][-1 -index] for index in range(n_rows)]
 
 print(f'Primary diagonal: {", ".join(str(n) for n in primary_diagonal)}. Sum: {sum(primary_diagonal)}')
 print(f'Secondary diagonal: {", ".join(str(n) for n in secondary_diagonal)}. Sum: {sum(secondary_diagonal)}')
-
 
