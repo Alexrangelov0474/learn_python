@@ -6,16 +6,18 @@ n_cols = len(matrix[0])
 
 commands = input().split()
 bombs = deque()
+
 for command in commands:
     row, col = map(int, command.split(','))
     bombs.append((row, col))
 
-alive_cells = matrix.copy()
-
 for bomb_row, bomb_col  in bombs:
-    bomb = matrix[bomb_row][bomb_col]
+    if matrix[bomb_row][bomb_col] <= 0:
+        continue
+
     bomb_strenght = matrix[bomb_row][bomb_col]
     matrix[bomb_row][bomb_col] = 0
+
     start_row = max(0, bomb_row - 1)
     end_row = min(n_rows, bomb_row + 2)
     start_col = max(0, bomb_col - 1)
@@ -24,5 +26,21 @@ for bomb_row, bomb_col  in bombs:
     for row in range(start_row, end_row):
         for col in range(start_col, end_col):
             cell = matrix[row][col]
+
             if cell != 0:
-                matrix[row][col] -= cell - bomb_strenght
+                matrix[row][col] -= bomb_strenght
+
+for row in matrix:
+    print(*row)
+
+alive_cells = 0
+alive_cell_counter = 0
+
+for row in matrix:
+    for cell in row:
+        if cell > 0:
+            alive_cells += cell
+            alive_cell_counter += 1
+
+print(f'Alive cells: {alive_cell_counter}')
+print(f'Sum: {alive_cells}')
