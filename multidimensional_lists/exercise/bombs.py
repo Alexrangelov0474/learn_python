@@ -27,11 +27,8 @@ for bomb_row, bomb_col  in bombs:
         for col in range(start_col, end_col):
             cell = matrix[row][col]
 
-            if cell != 0:
+            if cell > 0:
                 matrix[row][col] -= bomb_strenght
-
-for row in matrix:
-    print(*row)
 
 alive_cells = 0
 alive_cell_counter = 0
@@ -44,3 +41,6 @@ for row in matrix:
 
 print(f'Alive cells: {alive_cell_counter}')
 print(f'Sum: {alive_cells}')
+
+for row in matrix:
+    print(*row)
