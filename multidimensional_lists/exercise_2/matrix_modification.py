@@ -14,7 +14,7 @@ while True:
     if action == 'END':
         break
 
-    row, col, value = int(commands[1]), int(commands[2]), int(commands[3])
+    row, col, value = map(int, commands[1:])
 
     if 0 <= row < n_rows and 0 <= col < n_rows:
         modify_matrix(action, row, col, value)
