@@ -39,7 +39,7 @@ def execution_of_commands(current_matrix:list, current_command:list, p_row: int,
         new_row, new_col = p_row + dr, p_col + dc
         while 0 <= new_row < n_rows and 0 <= new_col < n_rows:
             if current_matrix[new_row][new_col] == 'x':
-                target_hited = (new_row, new_col)
+                target_hited = [new_row, new_col]
                 current_matrix[new_row][new_col] = '.'
 
                 return p_row, p_col, target_hited
