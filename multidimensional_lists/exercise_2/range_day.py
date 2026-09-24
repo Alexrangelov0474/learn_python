@@ -5,6 +5,13 @@ player_row = 0
 player_col = 0
 targets_count = 0
 
+DIRECTIONS = {
+    'left' : (0, -1),
+    'right' : (0, 1),
+    'up' : (-1, 0),
+    'down' : (1, 0)
+}
+
 for row in range(n_rows):
    current_row = input().split()
    matrix.append(current_row)
@@ -18,11 +25,12 @@ for row in range(n_rows):
 
 def execution_of_commands(current_matrix:list, current_command:list, p_row: int, p_col: int,)-> tuple:
     action = current_command[0]
-    target_hited = None
+    target_hit = None
+
     if action == 'move':
         steps = int(current_command[2])
-        row_change, col_change = DIRECTIONS[current_command[1]]
-        new_row, new_col = p_row + row_change * steps, p_col + col_change * steps
+        dr, dc = DIRECTIONS[current_command[1]]
+        new_row, new_col = p_row + dr * steps, p_col + dc * steps
 
         if 0 <= new_row < n_rows and 0 <= new_col < n_rows:
             if current_matrix[new_row][new_col] == '.':
@@ -30,24 +38,22 @@ def execution_of_commands(current_matrix:list, current_command:list, p_row: int,
                 current_matrix[new_row][new_col] = 'A'
 
                 p_row, p_col = new_row, new_col
-                return p_row, p_col, target_hited
 
     elif action == 'shoot':
-        direction = current_command[1]
-        dr, dc = DIRECTIONS[direction]
+        dr, dc = DIRECTIONS[current_command[1]]
 
         new_row, new_col = p_row + dr, p_col + dc
+
         while 0 <= new_row < n_rows and 0 <= new_col < n_rows:
             if current_matrix[new_row][new_col] == 'x':
-                target_hited = [new_row, new_col]
+                t = [new_row, new_col]
                 current_matrix[new_row][new_col] = '.'
-
-                return p_row, p_col, target_hited
+                break
 
             new_row += dr
             new_col += dc
 
-    return p_row, p_col, target_hited
+    return p_row, p_col, target_hit
 
 DIRECTIONS = {
     'left' : (0, -1),
