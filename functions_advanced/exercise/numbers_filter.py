@@ -5,8 +5,7 @@ def even_odd_filter(**kwargs):
         else:
             kwargs[key] = list(filter(lambda x: x % 2 == 0, value))
 
-    sorted_dict = sorted(kwargs.items(), key=lambda kvp: -len(kvp[1]))
-    return dict(sorted_dict)
+    return dict(sorted(kwargs.items(), key=lambda kvp: -len(kvp[1])))
 
 print(even_odd_filter(
  odd=[1, 2, 3, 4, 10, 5],
