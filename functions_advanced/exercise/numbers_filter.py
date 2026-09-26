@@ -5,7 +5,7 @@ def even_odd_filter(**kwargs):
         else:
             kwargs[key] = list(filter(lambda x: x % 2 == 0, value))
 
-    sorted_dict = sorted(kwargs.items(), key=lambda kvp: len(kvp[1]), reverse = True)
+    sorted_dict = sorted(kwargs.items(), key=lambda kvp: -len(kvp[1]))
     return dict(sorted_dict)
 
 print(even_odd_filter(
