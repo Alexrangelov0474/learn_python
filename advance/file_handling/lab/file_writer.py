@@ -1,2 +1,2 @@
-file = open('my_write_file.txt', 'w')
+file = open('write_file.txt', 'a')
 file.write('hi py')
