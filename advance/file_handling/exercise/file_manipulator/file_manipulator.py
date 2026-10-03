@@ -6,8 +6,10 @@ while True:
         break
 
     action, filename, *args = line.split('-')
+
     if action == 'Create':
-        file = open(filename, 'w').close()
+        open(filename, 'w').close()
+
     elif action == 'Add':
         with open(filename, 'a') as file:
             file.write(f'{args[0]}\n')
