@@ -23,7 +23,7 @@ def get_file(folder, level = float('inf')):
 get_file(directory)
 
 with open(os.path.join(directory, 'report.txt'), 'w') as output:
-    for extension, filename in sorted(files.items()):
-        output.write(f'{extension}\n')
+    for ext, filename in sorted(files.items()):
+        output.write(f'{ext}\n')
         for f_name in sorted(filename):
             output.write(f'- - - {f_name}\n')
