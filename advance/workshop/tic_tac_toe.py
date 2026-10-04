@@ -72,9 +72,7 @@ def check_for_winner(the_board: list, cur_sign) -> bool:
     return False
 
 
-while True:
-    if turn > 9:
-        break
+while turn <= 9:
 
     current_player = player_one_name if turn % 2 != 0 else player_two_name
     current_sign = player_one_sign if turn % 2 != 0 else player_two_sign
@@ -98,7 +96,7 @@ while True:
     board[row][col] = current_sign
     print_board(board)
 
-    if turn > 4 and check_for_winner(board, current_sign):
+    if turn >= 5 and check_for_winner(board, current_sign):
         print(f'Congrats! {current_player} wins!')
         exit()
 
