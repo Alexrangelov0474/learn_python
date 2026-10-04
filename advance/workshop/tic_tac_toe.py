@@ -29,8 +29,49 @@ def print_board(the_board: list) -> None:
     for current_row in the_board:
         print(f'| {" | ".join(current_row)} |')
 
+def check_row_winner(the_board: list, cur_sign: str) -> bool:
+    for cur_row in the_board:
+        if cur_row.count(cur_sign) == 3:
+            return True
+    return False
+
+def check_col_winner(the_board: list, cur_sign: str) -> bool:
+    for cur_col in range(len(the_board)):
+        count = 0
+        for cur_row in range(len(the_board)):
+            if the_board[cur_row][cur_col] == cur_sign:
+                count += 1
+
+        if count == 3:
+            return True
+    return False
+
+def check_diagonal_winner(the_board:list, cur_sign: str) -> bool:
+    primary_counter = 0
+    secondary_counter = 0
+    for index in range(len(the_board)):
+        if the_board[index][index] == cur_sign:
+            primary_counter += 1
+        if the_board[index][3 - index - 1]:
+            secondary_counter += 1
+
+        if primary_counter == 3 or secondary_counter == 3:
+            return True
+    return False
+
+def check_for_winner(the_board: list, cur_sign) -> bool:
+    row_winner = check_row_winner(the_board, cur_sign)
+    col_winner = check_col_winner(the_board, cur_sign)
+    diagonal_winner = check_diagonal_winner(the_board, cur_sign)
+    if row_winner or col_winner or diagonal_winner:
+        return True
+    return False
+
 
 while True:
+    if turn > 9:
+        break
+
     current_player = player_one_name if turn % 2 != 0 else player_two_name
     current_sign = player_one_sign if turn % 2 != 0 else player_two_sign
 
@@ -50,5 +91,10 @@ while True:
         continue
 
     board[row][col] = current_sign
+    if turn > 4 and check_for_winner(board, current_sign):
+        print(f'Congrats! {current_player} wins!')
+
     turn += 1
     print_board(board)
+
+print('Thanks for playing, no winner today!')
