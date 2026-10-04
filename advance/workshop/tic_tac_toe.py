@@ -1,7 +1,7 @@
 player_one_name = input('Player one name: ')
 player_two_name = input('Player two name: ')
 
-player_one_sign = input(f'{player_one_name} would you like to play with "X" or "O"?').upper()
+player_one_sign = input(f'{player_one_name} would you like to play with "X" or "O"? ').upper()
 
 player_two_sign = 'O' if player_one_sign == 'X' else 'X'
 
@@ -12,12 +12,30 @@ print('| 7 | 8 | 9 |')
 print(f'{player_one_name} starts first!')
 
 turn = 1
+board = [[' ', ' ', ' '] for _ in range(3)]
+mapper = {
+    1: (0, 0),
+    2: (0, 1),
+    3: (0, 2),
+    4: (1, 0),
+    5: (1, 1),
+    6: (1, 2),
+    7: (2, 0),
+    8: (2, 1),
+    9: (2, 2)
+}
+
+def print_board(the_board: list) -> None:
+    for current_row in the_board:
+        print(f'| {" | ".join(current_row)} |')
+
+
 while True:
     current_player = player_one_name if turn % 2 != 0 else player_two_name
     current_sign = player_one_sign if turn % 2 != 0 else player_two_sign
 
     try:
-        position = int(input(f'{current_player} choose a free position [1-9]:'))
+        position = int(input(f'{current_player} choose a free position [1-9]: '))
     except ValueError:
         print('Please enter a valid number!')
         continue
@@ -26,4 +44,11 @@ while True:
         print('Please enter a valid number, between 1 and 9.')
         continue
 
+    row, col = mapper[position]
+    if board[row][col] != ' ':
+        print('This position is already occupied.')
+        continue
+
+    board[row][col] = current_sign
     turn += 1
+    print_board(board)
