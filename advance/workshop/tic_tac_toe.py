@@ -1,9 +1,13 @@
 player_one_name = input('Player one name: ')
 player_two_name = input('Player two name: ')
 
-player_one_sign = input(f'{player_one_name} would you like to play with "X" or "O"? ').upper()
+while True:
+    player_one_sign = input(f'{player_one_name} would you like to play with "X" or "O"? ').upper()
+    if player_one_sign in ('X', 'O'):
+        player_two_sign = 'O' if player_one_sign == 'X' else 'X'
+        break
 
-player_two_sign = 'O' if player_one_sign == 'X' else 'X'
+    print('Please choose either X or O !')
 
 print('This is the numeration of the board:')
 print('| 1 | 2 | 3 |')
@@ -52,7 +56,7 @@ def check_diagonal_winner(the_board:list, cur_sign: str) -> bool:
     for index in range(len(the_board)):
         if the_board[index][index] == cur_sign:
             primary_counter += 1
-        if the_board[index][3 - index - 1]:
+        if the_board[index][3 - index - 1] == cur_sign:
             secondary_counter += 1
 
         if primary_counter == 3 or secondary_counter == 3:
@@ -90,11 +94,12 @@ while True:
         print('This position is already occupied.')
         continue
 
+    turn += 1
     board[row][col] = current_sign
+    print_board(board)
+
     if turn > 4 and check_for_winner(board, current_sign):
         print(f'Congrats! {current_player} wins!')
-
-    turn += 1
-    print_board(board)
+        exit()
 
 print('Thanks for playing, no winner today!')
