@@ -69,6 +69,11 @@ def check_for_winner(the_board: list, cur_sign) -> bool:
             or check_col_winner(the_board, cur_sign)
             or check_diagonal_winner(the_board, cur_sign))
 
+    # row_winner = check_row_winner(the_board, cur_sign)
+    # col_winner = check_col_winner(the_board, cur_sign)
+    # diagonal_winner = check_diagonal_winner(the_board, cur_sign)
+    # return row_winner or col_winner or diagonal_winner
+
 while turn <= 9:
 
     current_player = player_one_name if turn % 2 != 0 else player_two_name
