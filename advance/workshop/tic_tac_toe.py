@@ -60,9 +60,7 @@ def check_diagonal_winner(the_board:list, cur_sign: str) -> bool:
     primary_diagonal = [the_board[index][index] for index in range(len(the_board))]
     secondary_diagonal = [the_board[index][len(the_board) - index -1] for index in range(len(the_board))]
 
-    if all(el == cur_sign for el in primary_diagonal) or all(el == cur_sign for el in secondary_diagonal):
-        return True
-    return False
+    return all(el == cur_sign for el in primary_diagonal) or all(el == cur_sign for el in secondary_diagonal)
 
     #     # if the_board[index][index] == cur_sign:
     #     #     primary_counter += 1
