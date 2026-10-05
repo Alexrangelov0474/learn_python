@@ -30,14 +30,22 @@ def check_row_winner(the_board: list, cur_sign: str) -> bool:
 
 def check_col_winner(the_board: list, cur_sign: str) -> bool:
     for cur_col in range(len(the_board)):
-        count = 0
-        for cur_row in range(len(the_board)):
-            if the_board[cur_row][cur_col] == cur_sign:
-                count += 1
+        column = [the_board[cur_row][cur_col] for cur_row in range(len(the_board))]
 
-        if count == 3:
+        if all(el == cur_sign for el in column):
             return True
+
     return False
+
+    # for cur_col in range(len(the_board)):
+    #     count = 0
+    #     for cur_row in range(len(the_board)):
+    #         if the_board[cur_row][cur_col] == cur_sign:
+    #             count += 1
+    #
+    #     if count == 3:
+    #         return True
+    # return False
 
 def check_diagonal_winner(the_board:list, cur_sign: str) -> bool:
     primary_counter = 0
