@@ -48,17 +48,21 @@ def check_col_winner(the_board: list, cur_sign: str) -> bool:
     # return False
 
 def check_diagonal_winner(the_board:list, cur_sign: str) -> bool:
-    primary_counter = 0
-    secondary_counter = 0
-    for index in range(len(the_board)):
-        if the_board[index][index] == cur_sign:
-            primary_counter += 1
-        if the_board[index][3 - index - 1] == cur_sign:
-            secondary_counter += 1
+    primary_diagonal = [the_board[index][index] for index in range(len(the_board))]
+    secondary_diagonal = [the_board[index][len(the_board) - index -1] for index in range(len(the_board))]
 
-        if primary_counter == 3 or secondary_counter == 3:
-            return True
+    if all(el == cur_sign for el in primary_diagonal) or all(el == cur_sign for el in secondary_diagonal):
+        return True
     return False
+
+    #     # if the_board[index][index] == cur_sign:
+    #     #     primary_counter += 1
+    #     if the_board[index][3 - index - 1] == cur_sign:
+    #         secondary_counter += 1
+    #
+    #     if primary_counter == 3 or secondary_counter == 3:
+    #         return True
+    # return False
 
 def check_for_winner(the_board: list, cur_sign) -> bool:
     row_winner = check_row_winner(the_board, cur_sign)
