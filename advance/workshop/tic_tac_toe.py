@@ -17,17 +17,6 @@ print(f'{player_one_name} starts first!')
 
 turn = 1
 board = [[' ', ' ', ' '] for _ in range(3)]
-mapper = {
-    1: (0, 0),
-    2: (0, 1),
-    3: (0, 2),
-    4: (1, 0),
-    5: (1, 1),
-    6: (1, 2),
-    7: (2, 0),
-    8: (2, 1),
-    9: (2, 2)
-}
 
 def print_board(the_board: list) -> None:
     for current_row in the_board:
@@ -87,12 +76,13 @@ while turn <= 9:
         print('Please enter a valid number, between 1 and 9.')
         continue
 
-    row, col = mapper[position]
+    row = (position - 1) // 3
+    col = (position - 1) % 3
+
     if board[row][col] != ' ':
         print('This position is already occupied.')
         continue
 
-    turn += 1
     board[row][col] = current_sign
     print_board(board)
 
@@ -100,4 +90,5 @@ while turn <= 9:
         print(f'Congrats! {current_player} wins!')
         exit()
 
+    turn += 1
 print('Thanks for playing, no winner today!')
