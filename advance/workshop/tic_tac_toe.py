@@ -65,13 +65,9 @@ def check_diagonal_winner(the_board:list, cur_sign: str) -> bool:
     # return False
 
 def check_for_winner(the_board: list, cur_sign) -> bool:
-    row_winner = check_row_winner(the_board, cur_sign)
-    col_winner = check_col_winner(the_board, cur_sign)
-    diagonal_winner = check_diagonal_winner(the_board, cur_sign)
-    if row_winner or col_winner or diagonal_winner:
-        return True
-    return False
-
+    return (check_row_winner(the_board, cur_sign)
+            or check_col_winner(the_board, cur_sign)
+            or check_diagonal_winner(the_board, cur_sign))
 
 while turn <= 9:
 
