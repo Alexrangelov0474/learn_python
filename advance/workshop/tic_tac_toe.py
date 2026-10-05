@@ -23,10 +23,19 @@ def print_board(the_board: list) -> None:
         print(f'| {" | ".join(current_row)} |')
 
 def check_row_winner(the_board: list, cur_sign: str) -> bool:
-    for cur_row in the_board:
-        if cur_row.count(cur_sign) == 3:
-            return True
-    return False
+    return any(all(cell == cur_sign for cell in cur_row) for cur_row in the_board)
+
+    # for cur_row in the_board:
+    #     if any(all(cell == cur_sign for cell in cur_row) for cur_row in the_board):
+    #         return True
+    # return False
+
+    ######## OR ########
+
+    # for cur_row in the_board:
+    #     if cur_row.count(cur_sign) == 3:
+    #         return True
+    # return False
 
 def check_col_winner(the_board: list, cur_sign: str) -> bool:
     for cur_col in range(len(the_board)):
