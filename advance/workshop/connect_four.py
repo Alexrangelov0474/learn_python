@@ -94,6 +94,7 @@ matrix = create_matrix(ROWS, COLS)
 print_matrix(matrix)
 
 player_num = 1
+counter = 0
 
 while True:
     try:
@@ -104,6 +105,11 @@ while True:
 
         if is_winner(matrix, row, col, player_num, SLOTS):
             print(f'The winner is player {player_num}')
+            break
+
+        counter += 1
+        if ROWS * COLS == counter:
+            print('DRAW')
             break
 
         player_num = 2 if player_num == 1 else 1
