@@ -222,3 +222,4 @@ __marimo__/
 /function_exercise/.idea/modules.xml
 /function_exercise/.idea/inspectionProfiles/profiles_settings.xml
 /function_exercise/.idea/vcs.xml
+*.iml
