@@ -3,9 +3,19 @@ from canvas import app
 from helpers import clean_screen
 
 def login(username, password):
-    pass
+    with open('db/user_credentials_db.txt') as file:
+        data = file.readlines()
+        for line in data:
+            name, pwd = line.strip().split(', ')
+            if name == username and pwd == password:
+                with open('db/current_user.txt', 'w') as f:
+                    f.write(username)
+                return
 
-def render_login_screen():
+    render_login_screen('Invalid username or password')
+
+
+def render_login_screen(error= None):
     clean_screen()
 
     username  = tk.Entry(app)
@@ -21,6 +31,10 @@ def render_login_screen():
         fg='white',
         command=lambda: login(username.get(), password.get())
     ).grid(row=2, column=0)
+
+    if error:
+        tk.Label(app, text=error).grid(row=3, column=0)
+
 
 
 def rander_main_enter_screen():
