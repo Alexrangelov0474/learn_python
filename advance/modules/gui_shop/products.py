@@ -8,7 +8,7 @@ from PIL import Image, ImageTk
 base_folder = os.path.dirname(__file__)
 
 def update_current_user(username, product_id):
-    with open(os.path.join(base_folder, 'db', ' users.txt'), 'r+') as file:
+    with open(os.path.join(base_folder, 'db', 'users.txt'), 'r+') as file:
         users = [json.loads(u.strip()) for u in file]
         for user in users:
             if user['username'] == username:
@@ -46,7 +46,8 @@ def render_products_screen():
     clean_screen()
     with open(os.path.join(base_folder,'db', 'products.txt')) as file:
         products = [json.loads(p.strip()) for p in file]
-        products_per_row = 4
+        products = [p for p in products if p['count'] > 0]
+        products_per_row = 8
         rows_for_products = len(products[0])
         for idx, product in enumerate(products):
             row = idx // products_per_row * rows_for_products

@@ -28,7 +28,7 @@ def register(**user):
         if user['username'] in users:
             render_register_screen(error='Username already registered!')
             return
-        file.write(f'{user["username"]}, {user["password"]}')
+        file.write(f'{user["username"]}, {user["password"]}\n')
     with open('db/users.txt', 'a') as file:
         file.write(json.dumps(user) + '\n')
 

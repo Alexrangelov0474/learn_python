@@ -1,3 +1,16 @@
-{"id": 1, "name": "some test", "img_path": "1.png", "count": 1}
-{"id": 2, "name": "asd", "img_path": "1.png", "count": 28}
-{"id": 3, "name": "3", "img_path": "1.png", "count": 30}
+{"id": 1, "name": "some test", "img_path": "1.png", "count": 3}
+{"id": 2, "name": "asd", "img_path": "1.png", "count": 23}
+{"id": 3, "name": "3", "img_path": "1.png", "count": 28}
+{"id": 4, "name": "Gaming Mouse", "img_path": "1.png", "count": 15}
+{"id": 5, "name": "Mechanical Keyboard", "img_path": "1.png", "count": 12}
+{"id": 6, "name": "Gaming Headset", "img_path": "1.png", "count": 7}
+{"id": 7, "name": "USB Microphone", "img_path": "1.png", "count": 20}
+{"id": 8, "name": "Webcam HD", "img_path": "1.png", "count": 10}
+{"id": 9, "name": "Mouse Pad XL", "img_path": "1.png", "count": 35}
+{"id": 10, "name": "USB Flash Drive", "img_path": "1.png", "count": 42}
+{"id": 11, "name": "External SSD", "img_path": "1.png", "count": 7}
+{"id": 12, "name": "Bluetooth Speaker", "img_path": "1.png", "count": 18}
+{"id": 13, "name": "Laptop Stand", "img_path": "1.png", "count": 14}
+{"id": 14, "name": "USB-C Hub", "img_path": "1.png", "count": 9}
+{"id": 15, "name": "Monitor Light Bar", "img_path": "1.png", "count": 6}
+{"id": 16, "name": "Cougar Mouse Pad", "img_path": "1.png", "count": 14}
