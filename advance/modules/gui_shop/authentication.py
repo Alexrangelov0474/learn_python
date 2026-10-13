@@ -1,6 +1,5 @@
 import json
 import tkinter as tk
-from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from canvas import app
 from helpers import clean_screen
 from products import render_products_screen
