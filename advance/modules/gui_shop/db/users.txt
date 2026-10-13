@@ -1,3 +1,4 @@
 {"username": "sasho", "password": "123", "first_name": "a", "last_name": "r", "products": [2, 2]}
 {"username": "alex", "password": "321", "first_name": "Alex", "last_name": "Rangelov", "products": [3, 6, 1]}
 {"username": "niki", "password": "32", "first_name": "r", "last_name": "j", "products": [3]}
+{"username": "awd", "password": "asd", "first_name": "", "last_name": "", "products": []}

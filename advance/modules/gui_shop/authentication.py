@@ -1,5 +1,6 @@
 import json
 import tkinter as tk
+from string import ascii_lowercase, ascii_uppercase, digits, punctuation
 from canvas import app
 from helpers import clean_screen
 from products import render_products_screen
@@ -18,9 +19,52 @@ def login(username, password):
     render_login_screen('Invalid username or password!')
 
 def register(**user):
-    # TODO: validations
-
     clean_screen()
+
+    if user['username'] == '' or\
+            user['password'] == '' or\
+            user['first_name'] == '' or\
+            user['last_name'] == '':
+
+        render_register_screen(error='All fields are required!')
+        return
+
+    if len(user['username']) < 4:
+        render_register_screen(error='username must be at least 4 chars!')
+        return
+
+    if len(user['password']) < 3:
+        render_register_screen(error='password must be at least 4 chars!')
+        return
+
+    pass_validation_map = {'upper': False, 'lower': False, 'digit': False, 'special': False}
+
+    for char in user['password']:
+        if char in ascii_uppercase:
+            pass_validation_map['upper'] = True
+
+        elif char in ascii_lowercase:
+            pass_validation_map['lower'] = True
+
+        elif char in digits:
+            pass_validation_map['digit'] = True
+
+        elif char in punctuation:
+            pass_validation_map['special'] = True
+
+    if not all(pass_validation_map.values()):
+        render_register_screen(error='Password must contain at least 1 lower, upper, digit and special character!')
+        return
+
+    if len(user['first_name']) < 2:
+        render_register_screen(error='First name must be at least 2 chars!')
+        return
+
+    if len(user['last_name']) < 2:
+        render_register_screen(error='Last name must be at least 2 chars!')
+        return
+
+
     user.update({'products': []})
 
     with open('db/user_credentials_db.txt', 'r+', newline='\n') as file:
