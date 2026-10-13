@@ -1,10 +1,10 @@
 {"id": 1, "name": "some test", "img_path": "1.png", "count": 3}
 {"id": 2, "name": "asd", "img_path": "1.png", "count": 23}
 {"id": 3, "name": "3", "img_path": "1.png", "count": 28}
-{"id": 4, "name": "Gaming Mouse", "img_path": "1.png", "count": 15}
+{"id": 4, "name": "Gaming Mouse", "img_path": "1.png", "count": 14}
 {"id": 5, "name": "Mechanical Keyboard", "img_path": "1.png", "count": 12}
-{"id": 6, "name": "Gaming Headset", "img_path": "1.png", "count": 7}
-{"id": 7, "name": "USB Microphone", "img_path": "1.png", "count": 20}
+{"id": 6, "name": "Gaming Headset", "img_path": "1.png", "count": 6}
+{"id": 7, "name": "USB Microphone", "img_path": "1.png", "count": 19}
 {"id": 8, "name": "Webcam HD", "img_path": "1.png", "count": 10}
 {"id": 9, "name": "Mouse Pad XL", "img_path": "1.png", "count": 35}
 {"id": 10, "name": "USB Flash Drive", "img_path": "1.png", "count": 42}
