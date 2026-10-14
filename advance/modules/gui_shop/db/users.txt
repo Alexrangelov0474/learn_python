@@ -1,5 +1,5 @@
-{"username": "sasho", "password": "123", "first_name": "a", "last_name": "r", "products": [2, 2]}
+{"username": "sasho", "password": "123", "first_name": "a", "last_name": "r", "products": [2, 2, 2, 4]}
 {"username": "alex", "password": "321", "first_name": "Alex", "last_name": "Rangelov", "products": [3, 6, 1]}
 {"username": "niki", "password": "32", "first_name": "r", "last_name": "j", "products": [3]}
 {"username": "awd", "password": "asd", "first_name": "", "last_name": "", "products": []}
-{"username": "sashko", "password": "123Ar!", "first_name": "Alex", "last_name": "Rangelov", "products": [4, 7, 6], "is_admin": true}
+{"username": "sashko", "password": "123Ar!", "first_name": "Alex", "last_name": "Rangelov", "products": [4, 7, 6, 17], "is_admin": true}

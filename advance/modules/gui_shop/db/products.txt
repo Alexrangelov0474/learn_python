@@ -1,7 +1,7 @@
 {"id": 1, "name": "some test", "img_path": "1.png", "count": 3}
-{"id": 2, "name": "asd", "img_path": "1.png", "count": 23}
+{"id": 2, "name": "asd", "img_path": "1.png", "count": 22}
 {"id": 3, "name": "3", "img_path": "1.png", "count": 28}
-{"id": 4, "name": "Gaming Mouse", "img_path": "1.png", "count": 14}
+{"id": 4, "name": "Gaming Mouse", "img_path": "1.png", "count": 13}
 {"id": 5, "name": "Mechanical Keyboard", "img_path": "1.png", "count": 12}
 {"id": 6, "name": "Gaming Headset", "img_path": "1.png", "count": 6}
 {"id": 7, "name": "USB Microphone", "img_path": "1.png", "count": 19}
@@ -14,3 +14,4 @@
 {"id": 14, "name": "USB-C Hub", "img_path": "1.png", "count": 9}
 {"id": 15, "name": "Monitor Light Bar", "img_path": "1.png", "count": 6}
 {"id": 16, "name": "Cougar Mouse Pad", "img_path": "1.png", "count": 14}
+{"id": 17, "name": "new product", "img_path": "1.png", "count": 5}
