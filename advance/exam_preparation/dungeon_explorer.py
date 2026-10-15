@@ -51,12 +51,9 @@ while True:
 
             matrix[new_hero_r][new_hero_c] = 'P'
 
-
         elif matrix[new_hero_r][new_hero_c] == 'C':
             treasures += 1
             matrix[new_hero_r][new_hero_c] = 'P'
-
-
 
         elif matrix[new_hero_r][new_hero_c] == 'E':
             matrix[new_hero_r][new_hero_c] = 'P'
@@ -67,14 +64,10 @@ while True:
         else:
             matrix[new_hero_r][new_hero_c] = 'P'
 
-
         hero_r, hero_c = new_hero_r, new_hero_c
-
 
     else:
         new_hero_r, new_hero_c = hero_r, hero_c
-
-
 
 if game_status == 'playing':
     print('Exploration ended.')
