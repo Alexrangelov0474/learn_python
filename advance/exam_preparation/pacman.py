@@ -53,10 +53,10 @@ while health > 0 and collected_stars < stars_count:
 if health == 0:
     print(f'Game over! Pacman last coordinates [{p_row},{p_col}]')
 
-if stars_count == 0:
+elif collected_stars == stars_count:
     print('Pacman wins! All the stars are collected.')
 
-if health > 0 and collected_stars < stars_count:
+else:
     print('Pacman failed to collect all the stars.')
 
 print(f'Health: {health}')
