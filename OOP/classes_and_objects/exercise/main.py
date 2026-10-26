@@ -1,20 +1,18 @@
-class Point:
-    def __init__(self, x:int, y:int):
-        self.x = x
-        self.y = y
+class Circle:
+    pi = 3.14
+    def __init__(self, radius:int):
+        self.radius = radius
 
-    def set_x(self, new_x:int) -> None:
-        self.x = new_x
+    def set_radius(self, new_radius:int) -> None:
+        self.radius = new_radius
 
-    def set_y(self, new_y:int) -> None:
-        self.y = new_y
+    def get_area(self) -> float:
+        return self.pi * self.radius * self.radius
 
-    def __str__(self):
-        return f'The point has coordinates ({self.x},{self.y})'
+    def get_circumference(self) -> float:
+        return 2 * self.pi * self.radius
 
-
-p = Point(2, 4)
-print(p)
-p.set_x(3)
-p.set_y(5)
-print(p)
+circle = Circle(10)
+circle.set_radius(12)
+print(circle.get_area())
+print(circle.get_circumference())
