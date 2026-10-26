@@ -1,18 +1,27 @@
-class Circle:
-    pi = 3.14
-    def __init__(self, radius:int):
-        self.radius = radius
+class Glass:
+    capacity = 250
 
-    def set_radius(self, new_radius:int) -> None:
-        self.radius = new_radius
+    def __init__(self):
+        self.content = 0
 
-    def get_area(self) -> float:
-        return self.pi * self.radius * self.radius
+    def fill(self, ml:int) -> str:
+        if (self.content + ml) > self.capacity:
+            return f'Cannot add {ml} ml'
+        self.content += ml
+        return f'Glass filled with {ml} ml'
 
-    def get_circumference(self) -> float:
-        return 2 * self.pi * self.radius
+    def empty(self) -> str:
+        self.content = 0
+        return 'Glass is now empty'
 
-circle = Circle(10)
-circle.set_radius(12)
-print(circle.get_area())
-print(circle.get_circumference())
+    def info(self) -> str:
+        return f'{self.capacity - self.content} ml left'
+
+
+
+glass = Glass()
+print(glass.fill(100))
+print(glass.fill(200))
+print(glass.empty())
+print(glass.fill(200))
+print(glass.info())
