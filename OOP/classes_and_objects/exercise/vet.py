@@ -21,7 +21,7 @@ class Vet:
         return f'{animal_name} not in the clinic'
 
     def info(self) -> str:
-        return f'{self.name} has {len(self.animals)} animals. {len(Vet.animals) - Vet.space} space left in clinic'
+        return f'{self.name} has {len(self.animals)} animals. {Vet.space - len(Vet.animals)} space left in clinic'
 
 peter = Vet("Peter")
 george = Vet("George")
