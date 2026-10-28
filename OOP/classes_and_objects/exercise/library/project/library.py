@@ -10,10 +10,6 @@ class Library:
         self.rented_books: dict = {}
 
     def get_book(self, author: str, book_name: str, days_to_return: int, user: User) -> str | None:
-        for username, books in self.rented_books.items():
-            if book_name in books:
-                return f'The book "{book_name}" is already rented and will be available in {books[book_name]} days!'
-
         if author in self.books_available and book_name in self.books_available[author]:
             user.books.append(book_name)
 
@@ -24,6 +20,10 @@ class Library:
             self.books_available[author].remove(book_name)
 
             return f'{book_name} successfully rented for the next {days_to_return} days!'
+
+        for books in self.rented_books.values():
+            if book_name in books:
+                return f'The book "{book_name}" is already rented and will be available in {books[book_name]} days!'
 
         return None
 
