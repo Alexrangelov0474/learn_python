@@ -15,7 +15,7 @@ class Player:
         return f'Skill {skill_name} added to the collection of the player {self.name}'
 
     def player_info(self):
-        result = [f'"Name: {self.name}',
+        result = [f'Name: {self.name}',
                   f'Guild: {self.guild}',
                   f'HP: {self.hp}',
                   f'MP: {self.mp}']
