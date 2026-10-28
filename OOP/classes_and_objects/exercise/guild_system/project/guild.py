@@ -7,7 +7,7 @@ class Guild:
 
     def assign_player(self, player: Player) -> str:
         if player in self.players:
-            return f'Player {self.name} is already in the guild.'
+            return f'Player {player.name} is already in the guild.'
 
         if player.guild != Player.NO_GUILD:
             return f'Player {player.name} is in another guild.'
