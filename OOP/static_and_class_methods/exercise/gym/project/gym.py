@@ -35,3 +35,10 @@ class Gym:
         self.__add_objects(subscription, self.subscriptions)
 
     def subscription_info(self, subscription_id: int):
+        subscription = next((s for s in self.subscriptions if s.id == subscription_id), None)
+        customer = next((c for c in self.customers if c.id == subscription.customer_id), None)
+        trainer = next((t for t in self.trainers if t.id == subscription.trainer_id), None)
+        plan = next((p for p in self.plans if p.id == subscription.exercise_id), None)
+        equimpent = next((e for e in self.equipment if e.id == plan.equipment_id), None)
+
+        return '\n'.join([repr(subscription), repr(customer), repr(trainer), repr(equimpent), repr(plan)])
