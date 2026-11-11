@@ -1,5 +1,4 @@
-from project.formula_team import FormulaTeam
-
+from project.formula_teams.formula_team import FormulaTeam
 
 class MercedesTeam(FormulaTeam):
     @property

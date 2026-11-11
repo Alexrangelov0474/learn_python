@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from project.mercedes_team import MercedesTeam
-from project.red_bull_team import RedBullTeam
-
+from project.formula_teams.mercedes_team import MercedesTeam
+from project.formula_teams.red_bull_team import RedBullTeam
 
 class F1SeasonApp:
     def __init__(self):
