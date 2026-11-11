@@ -18,7 +18,7 @@ class FormulaTeam(ABC):
 
     @budget.setter
     def budget(self, value):
-        if value <= self.MIN_BUDGET:
+        if value < self.MIN_BUDGET:
             raise ValueError('F1 is an expensive sport, find more sponsors!')
         self.__budget = value
 
