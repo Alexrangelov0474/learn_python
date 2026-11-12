@@ -7,9 +7,20 @@ class Formatter:
     def format(self, book: Book) -> str:
         return book.content
 
+class PaperFormatter(Formatter):
+    def format(self, book: Book) -> str:
+        return book.content[:2]
+
 
 class Printer:
-    def get_book(self, book: Book):
-        formatter = Formatter()
+    def get_book(self, book: Book, formatter: Formatter):
         formatted_book = formatter.format(book)
         return formatted_book
+
+f = Formatter()
+pf = PaperFormatter()
+
+b = Book('Hello there')
+printer = Printer()
+print(printer.get_book(b, f))
+print(printer.get_book(b, pf))
