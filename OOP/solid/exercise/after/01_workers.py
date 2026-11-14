@@ -1,7 +1,21 @@
-class Worker:
+from abc import abstractmethod, ABC
 
-    def work(self):
+
+class BaseWorkers(ABC):
+    @staticmethod
+    @abstractmethod
+    def work():
+        pass
+
+class Worker(BaseWorkers):
+    @staticmethod
+    def work():
         print("I'm working!!")
+
+class SuperWorker(BaseWorkers):
+    @staticmethod
+    def work():
+        print("I work very hard!!!")
 
 
 class Manager:
@@ -10,7 +24,7 @@ class Manager:
         self.worker = None
 
     def set_worker(self, worker):
-        assert isinstance(worker, Worker), '`worker` must be of type {}'.format(Worker)
+        assert isinstance(worker, BaseWorkers), '`worker` must be of type {}'.format(BaseWorkers)
 
         self.worker = worker
 
@@ -18,20 +32,15 @@ class Manager:
         if self.worker is not None:
             self.worker.work()
 
-class SuperWorker:
-
-    def work(self):
-        print("I work very hard!!!")
-
-
 
 worker = Worker()
 manager = Manager()
 manager.set_worker(worker)
 manager.manage()
-
 super_worker = SuperWorker()
+
 try:
     manager.set_worker(super_worker)
+    manager.manage()
 except AssertionError:
     print("manager fails to support super_worker....")
