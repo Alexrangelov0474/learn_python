@@ -2,7 +2,7 @@ class custom_range:
     def __init__(self, start: int, end: int):
         self.start = start
         self.end = end
-        self.current = -1
+        self.current = start - 1
 
     def __iter__(self):
         return self
