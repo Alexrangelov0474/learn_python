@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from abc import ABC
+from abc import ABC, abstractmethod
+from math import log2
 
 
 class Computer(ABC):
@@ -31,8 +32,35 @@ class Computer(ABC):
             raise ValueError('Model name cannot be empty.')
         self.__model = value
 
-    def configure_computer(self, processor: str, ram: int):
+    @property
+    @abstractmethod
+    def available_processors(self) -> dict[str, int]:
         pass
+
+    @property
+    @abstractmethod
+    def max_ram(self) -> int:
+        pass
+
+    @property
+    def valid_ram(self) -> list[int]:
+        return [2 ** i for i in range(1, int(log2(self.max_ram)) + 1)] # връщаме всички възможни стойности за рам памет.
+
+
+
+    def configure_computer(self, processor: str, ram: int):
+        if processor not in self.available_processors:
+            raise ValueError(f'{processor} is not compatible with {self.__str__()} {self.manufacturer} {self.model}!')
+        if ram not in self.valid_ram:
+            raise ValueError(f'{ram}GB RAM is not compatible with {self.__str__()} {self.manufacturer} {self.model}!')
+
+        proccesor_price = self.available_processors[processor]
+        ram_price = int(log2(ram) * 100)
+        self.ram = ram
+        self.processor = processor
+        self.price = proccesor_price + ram_price
+
+        return f'Created {self.__repr__()} for {self.price}$.'
 
     def __repr__(self) -> str:
         return f'{self.manufacturer} {self.model} with {self.processor} and {self.ram}GB RAM'
