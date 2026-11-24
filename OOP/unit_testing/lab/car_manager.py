@@ -178,6 +178,5 @@ class CarTests(TestCase):
         c.drive(1000)
         self.assertEqual(1, c.fuel_amount)
 
-
 if __name__ == '__main__':
     main()
