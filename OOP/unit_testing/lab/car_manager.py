@@ -83,6 +83,9 @@ class CarTests(TestCase):
         self.assertEqual(100, c.fuel_capacity)
         self.assertEqual(0, c.fuel_amount)
 
+        c.fuel_amount =  20
+        self.assertEqual(20, c.fuel_amount)
+
     def test_make_empty_raises(self):
         with self.assertRaises(Exception) as ex:
             Car(None, 'test model', 20, 100)
@@ -91,7 +94,6 @@ class CarTests(TestCase):
         with self.assertRaises(Exception) as ex:
             Car('', 'test model', 20, 100)
         self.assertEqual('Make cannot be null or empty!', str(ex.exception))
-
 
     def test_model_empty_raises(self):
         with self.assertRaises(Exception) as ex:
@@ -110,6 +112,72 @@ class CarTests(TestCase):
         with self.assertRaises(Exception) as ex:
             Car('test make', 'test model', 0, 100)
         self.assertEqual('Fuel consumption cannot be zero or negative!', str(ex.exception))
+
+    def test_fuel_capacity_zero_or_less_raises(self):
+        with self.assertRaises(Exception) as ex:
+            Car('test make', 'test model', 20, -1)
+        self.assertEqual('Fuel capacity cannot be zero or negative!', str(ex.exception))
+
+        with self.assertRaises(Exception) as ex:
+            Car('test make', 'test model', 20, 0)
+        self.assertEqual('Fuel capacity cannot be zero or negative!', str(ex.exception))
+
+    def test_fuel_amount_less_than_zero_raises(self):
+        c = Car('test make', 'test model', 20, 100)
+        self.assertEqual(0, c.fuel_amount)
+        with self.assertRaises(Exception) as ex:
+            c.fuel_amount = -10
+            self.assertEqual('Fuel amount cannot be negative!', str(ex.exception))
+            self.assertEqual(0, c.fuel_amount)
+
+    def test_refuel_fuel_zero_or_less_raises(self):
+        c = Car('test make', 'test model', 20, 100)
+
+        with self.assertRaises(Exception) as ex:
+            c.refuel(0)
+        self.assertEqual('Fuel amount cannot be zero or negative!', str(ex.exception))
+
+        with self.assertRaises(Exception) as ex:
+            c.refuel(-1)
+        self.assertEqual('Fuel amount cannot be zero or negative!', str(ex.exception))
+
+    def test_refuel_within_capacity(self):
+        c = Car('test make', 'test model', 20, 100)
+        c.fuel_amount = 20
+        self.assertEqual(20, c.fuel_amount)
+
+        c.refuel(20)
+        self.assertEqual(40, c.fuel_amount)
+
+    def test_refuel_above_capacity(self):
+        c = Car('test make', 'test model', 20, 100)
+        c.fuel_amount = 20
+        self.assertEqual(20, c.fuel_amount)
+
+        c.refuel(81)
+        self.assertEqual(100, c.fuel_amount)
+
+    def test_drive_above_available_fuel_raises(self):
+        c = Car('test make', 'test model', 20, 100)
+        c.fuel_amount = 199
+        self.assertEqual(199, c.fuel_amount)
+        with self.assertRaises(Exception) as ex:
+            c.drive(1000)
+        self.assertEqual("You don't have enough fuel to drive!", str(ex.exception))
+        self.assertEqual(199, c.fuel_amount)
+
+    def test_drive_exact_fuel_amount(self):
+        c = Car('test make', 'test model', 20, 100)
+        c.fuel_amount = 200
+        self.assertEqual(200, c.fuel_amount)
+        c.drive(1000)
+        self.assertEqual(0, c.fuel_amount)
+
+        c.fuel_amount = 201
+        self.assertEqual(201, c.fuel_amount)
+        c.drive(1000)
+        self.assertEqual(1, c.fuel_amount)
+
 
 if __name__ == '__main__':
     main()
