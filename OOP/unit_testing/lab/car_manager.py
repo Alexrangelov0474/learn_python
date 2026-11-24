@@ -71,6 +71,45 @@ class Car:
 
         self.__fuel_amount -= needed
 
-car = Car("a", "b", 1, 4)
-car.make = ""
-print(car)
+
+from unittest import TestCase, main
+
+class CarTests(TestCase):
+    def test_init(self):
+        c = Car('test make', 'test model', 20, 100)
+        self.assertEqual('test make', c.make)
+        self.assertEqual('test model', c.model)
+        self.assertEqual(20, c.fuel_consumption)
+        self.assertEqual(100, c.fuel_capacity)
+        self.assertEqual(0, c.fuel_amount)
+
+    def test_make_empty_raises(self):
+        with self.assertRaises(Exception) as ex:
+            Car(None, 'test model', 20, 100)
+        self.assertEqual('Make cannot be null or empty!', str(ex.exception))
+
+        with self.assertRaises(Exception) as ex:
+            Car('', 'test model', 20, 100)
+        self.assertEqual('Make cannot be null or empty!', str(ex.exception))
+
+
+    def test_model_empty_raises(self):
+        with self.assertRaises(Exception) as ex:
+            Car('test make', None, 20, 100)
+        self.assertEqual('Model cannot be null or empty!', str(ex.exception))
+
+        with self.assertRaises(Exception) as ex:
+            Car('test make', '', 20, 100)
+        self.assertEqual('Model cannot be null or empty!', str(ex.exception))
+
+    def test_fuel_consumption_zero_or_less_raises(self):
+        with self.assertRaises(Exception) as ex:
+            Car('test make', 'test model', -1, 100)
+        self.assertEqual('Fuel consumption cannot be zero or negative!', str(ex.exception))
+
+        with self.assertRaises(Exception) as ex:
+            Car('test make', 'test model', 0, 100)
+        self.assertEqual('Fuel consumption cannot be zero or negative!', str(ex.exception))
+
+if __name__ == '__main__':
+    main()
