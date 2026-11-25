@@ -34,6 +34,24 @@ class VehicleTest(TestCase):
             self.vehicle.drive(3)
         self.assertEqual('Not enough fuel', str(ex.exception))
 
+    def test_refuel_success(self):
+        self.vehicle.fuel = 1
+        self.vehicle.refuel(2.5)
+        self.assertEqual(3.5, self.vehicle.fuel)
+
+    def test_refuel_error(self):
+        self.vehicle.fuel = 35
+        with self.assertRaises(Exception) as ex:
+            self.vehicle.refuel(1)
+        self.assertEqual('Too much fuel', str(ex.exception))
+
+    def test_str(self):
+        expected = f"The vehicle has {self.horse_power} " \
+               f"horse power with {self.fuel} fuel left and 1.25 fuel consumption"
+        self.assertEqual(expected, str(self.vehicle))
+
+
+
 
 if __name__ == '__main__':
     main()
